@@ -4,8 +4,6 @@ New-Module -Name EnvSetup -ScriptBlock {
     $targetNugetExe = ".\nuget.exe"
     Invoke-WebRequest $sourceNugetExe -OutFile $targetNugetExe
     
-    echo $env:DotFeedUri
-    
     Set-Alias nuget $targetNugetExe -Scope Global -Verbose
     
     # Add DotFeed as source
