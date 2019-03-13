@@ -11,8 +11,12 @@ New-Module -Name EnvSetup -ScriptBlock {
     # Add DotFeed as source
     Write-Host "We are the best!!!!! :)"
     
-    Write-Host nuget sources list -verbosity detailed
+    Write-Output nuget sources list -verbosity detailed
+    Write-Output nuget list source -verbosity detailed
     
-    nuget sources add -Name DotFeed -Source $env:DotFeedUri -username buildAgent -password $env:DotFeedPassword -Verbosity Detailed
-    Write-Host nuget sources list
+    Write-Host "========== Adding feed now ==========="
+    
+    Write-Output nuget sources add -Name DotFeed -Source $env:DotFeedUri -username buildAgent -password $env:DotFeedPassword -Verbosity Detailed
+    Write-Output nuget list source -verbosity detailed
+    Write-Output nuget sources list
 }
