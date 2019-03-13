@@ -12,6 +12,6 @@ New-Module -Name EnvSetup -ScriptBlock {
     Write-Host "========== Adding feed now ==========="
     
     Write-Host (nuget sources add -Name DotFeed -Source $env:DotFeedUri -username buildAgent -password $env:DotFeedPassword -Verbosity Detailed)
-    Write-Output (nuget list source -verbosity detailed)
-    Write-Output (nuget sources list)
+    # Write-Output (nuget list source -verbosity detailed)
+    Write-Host (nuget sources list -Name DotFeed)
 }
