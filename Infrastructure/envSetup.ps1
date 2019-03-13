@@ -9,6 +9,6 @@ New-Module -Name EnvSetup -ScriptBlock {
     Set-Alias nuget $targetNugetExe -Scope Global -Verbose
     
     # Add DotFeed as source
-    nuget sources add -Name DotFeed -Source $env:DotFeedUri -username buildAgent -password $env:DotFeedPassword -Verbose
+    nuget sources add -Name DotFeed -Source $env:DotFeedUri -username buildAgent -password $env:DotFeedPassword -Verbosity Detailed
     nuget sources list
 }
