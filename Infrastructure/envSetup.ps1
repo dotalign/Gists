@@ -11,6 +11,9 @@ New-Module -Name EnvSetup -ScriptBlock {
     # Add DotFeed as source
     Write-Host "We are the best!!!!! :)"
     
+    ls
+    Write-Host (ls)
+    
     Write-Host (nuget sources list -verbosity detailed)
     Write-Host (nuget list source -verbosity detailed)
     
