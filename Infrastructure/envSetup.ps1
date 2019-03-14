@@ -6,7 +6,7 @@ New-Module -Name EnvSetup -ScriptBlock {
     Set-Alias nuget $targetNugetExe -Verbose
     
     # Add DotFeed as source
-    Write-Host (nuget sources add -Name DotFeed -Source $env:DotFeedUri -username buildAgent -password $env:DotFeedPassword -Verbosity Detailed)
+    Write-Host (nuget sources add -Name DotFeed -Source $env:DotFeedUri -username buildAgent -password $env:DotFeedPassword)
     # Make sure we can access DotFeed
     Write-Host (nuget sources list -Name DotFeed)
     Write-Host (nuget list Dot. -Source DotFeed)
