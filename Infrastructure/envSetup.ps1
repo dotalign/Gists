@@ -9,5 +9,5 @@ New-Module -Name EnvSetup -ScriptBlock {
     Write-Host (nuget sources add -Name DotFeed -Source "https://dotalign.pkgs.visualstudio.com/_packaging/DotFeed/nuget/v3/index.json" -username buildAgent -password $env:BuildAgentDotFeedPassword -Verbosity Detailed)
     Write-Output (nuget sources list -Name DotFeed)
     
-    Write-Output (nuget list dot.cake -Name DotFeed)
+    Write-Output (nuget list dot.cake -Source DotFeed)
 }
